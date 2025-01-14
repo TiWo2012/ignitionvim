@@ -26,12 +26,13 @@ This configuration is designed to be minimal and easy to customize. You can modi
 
 The main configuration file is located at `~/.config/nvim/lua`. You can edit this file to make changes to the configuration.
 
+the default options you can have a look at the file `.config/nvim/lua/options.lua`
+
 ## Key Mappings
 
-- `<leader>` is set to the `<space>` key
-- `<leader>e` toggles the file explorer
-- `<leader>ff` opens the fuzzy file finder
-- `<leader>q` closes the current buffer
+I have included [which-key](https://github.com/folke/which-key.nvim) for key mappings. 
+general mappings can be found under `.config/nvim/lua/keymaps.lua` and the one for plugins
+can be found in the `.config/nvim/lua/plugins/<file wich contains it the plugin>.lua`
 
 ## Plugins
 
@@ -40,6 +41,15 @@ This configuration includes the following plugins:
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim] - File explorer
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy file finder
+
+## Codecompletion
+
+This configuration is aimed towoards c/c++ development. 
+don't forget to install llvm. this config only works on unix based systems.
+
+- [clangd](https://clangd.llvm.org/) - C/C++ language server
+- [zerolsp](https://github.com/zerolsp/zerolsp) - tools for language servers
+- [codeium](https://github.com/Exafunction/codeium) - ai based code completion like github copilot
 
 ## Contributing
 
