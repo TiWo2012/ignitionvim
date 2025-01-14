@@ -1,6 +1,10 @@
 # ignitionvim 
 
-A simple, lightweight Neovim configuration that provides the essential functionality to get you started.
+A simple, lightweight Neovim configuration that provides the essential functionality to get you started with nvim for c/c++ development.
+easy to set up and use. close to vanilla nvim experience. inspired by Astrovim and nvChad.
+
+every thing in the repo are just my personal configs but you can send me PR and Isuess if someting doesn't work for you.
+I have no problem with it.
 
 ## Features
 
@@ -13,7 +17,7 @@ A simple, lightweight Neovim configuration that provides the essential functiona
 
 1. Clone this repository to your Neovim configuration directory (typically `~/.config/nvim/`):
 
-   ```
+   ```bash
    git clone https://github.com/your-username/minimal-neovim-config.git ~/.config/nvim
    rm -rf ~/.config/nvim/.git
    ```
@@ -28,7 +32,7 @@ The main configuration file is located at `~/.config/nvim/lua`. You can edit thi
 
 the default options you can have a look at the file `.config/nvim/lua/options.lua`
 
-## Key Mappings
+## Mappings
 
 I have included [which-key](https://github.com/folke/which-key.nvim) for key mappings. 
 general mappings can be found under `.config/nvim/lua/keymaps.lua` and the one for plugins
@@ -42,7 +46,7 @@ This configuration includes the following plugins:
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy file finder
 
-## Codecompletion
+## Code autocompletion
 
 This configuration is aimed towoards c/c++ development. 
 don't forget to install llvm. this config only works on unix based systems.
@@ -53,4 +57,5 @@ don't forget to install llvm. this config only works on unix based systems.
 
 ## Contributing
 
-If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+I don't have a problem with PR or Isues but don't expect them to be solved fast. I have more recent projects.
+For example [ByteForgeEngine](https://github.com/TiWo2012/ByteForge-Engine).
