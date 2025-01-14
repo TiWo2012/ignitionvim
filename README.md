@@ -39,7 +39,7 @@ can be found in the `.config/nvim/lua/plugins/<file wich contains it the plugin>
 This configuration includes the following plugins:
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
-- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim] - File explorer
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy file finder
 
 ## Codecompletion
