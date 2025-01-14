@@ -6,6 +6,8 @@ easy to set up and use. close to vanilla nvim experience. inspired by Astrovim a
 every thing in the repo are just my personal configs but you can send me PR and Isuess if someting doesn't work for you.
 I have no problem with it.
 
+'someone pls fix the splashscreen.'
+
 ## Features
 
 - **Minimal Setup**: This configuration focuses on providing only the core features and plugins needed for a productive Neovim experience for c/c++.
