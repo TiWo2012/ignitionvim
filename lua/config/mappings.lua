@@ -23,6 +23,8 @@ map("n", "<c-right>", ":vertical resize +2<cr>" , { silent = true })
 -- new file
 map("n", "<leader>n", ":new<cr>")
 
+map("n", "<leader>w", ":wa<cr>")
+
 -- close panes
 map("n", "<leader>q", ":q<cr>")
 
