@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/plugins/lualine.lua
-
 return {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons' },  -- Für Icons in der Statusline (optional)
