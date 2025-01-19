@@ -4,7 +4,10 @@ return {
     "catppuccin/nvim",
     config = function()
       vim.cmd("colorscheme catppuccin-mocha")
-    end
+    end,
+    opts = {
+      ransparent_background = true,
+    }
   }
 }
 
