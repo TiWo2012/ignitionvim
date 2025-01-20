@@ -17,10 +17,10 @@ I have no problem with it.
 
 ## Installation
 
-1. Clone this repository to your Neovim configuration directory (typically `~/.config/nvim/`):
+1. Clone this repository to your Neovim configuration directory (typically `~/.config/nvim/` for unix based systems(macos and linux)):
 
    ```bash
-   git clone https://github.com/your-username/minimal-neovim-config.git ~/.config/nvim
+   git clone https://github.com/TiWo2012/ignitionvim.git ~/.config/nvim
    rm -rf ~/.config/nvim/.git
    ```
 

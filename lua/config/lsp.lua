@@ -43,9 +43,6 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "clangd",
     "rust_analyzer",
-    "pyright",
-    "gopls",
-    "svelte",
   }
 })
 
