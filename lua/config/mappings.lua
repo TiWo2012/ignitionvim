@@ -5,8 +5,8 @@ map("i", "jk", "<esc>")
 map("i", "jj", "<esc>")
 
 -- better o
-map("n", "o", "o<esc>")
-map("n", "O", "O<esc>")
+-- map("n", "o", "o<esc>")
+-- map("n", "O", "O<esc>")
 
 -- window nav
 map("n", "<C-h>", "<c-w>h")
