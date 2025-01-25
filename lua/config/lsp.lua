@@ -41,10 +41,12 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
-    "clangd",
     "rust_analyzer",
+    "clangd",
   }
 })
+
+require'lspconfig'.ast_grep.setup{}
 
 require("mason-lspconfig").setup_handlers({
   function(server_name)

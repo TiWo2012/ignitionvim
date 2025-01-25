@@ -15,7 +15,7 @@ o.cursorcolumn=true
 o.syntax='on'
 
 -- scrolling
-o.scrolloff=12
+o.scrolloff=8
 
 -- undo speciffic stuff
 o.swapfile=false
@@ -32,3 +32,6 @@ o.smartindent=true
 
 -- clipboard
 o.clipboard='unnamedplus'
+
+-- warp
+o.wrap=false
