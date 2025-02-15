@@ -42,7 +42,7 @@ can be found in the `.config/nvim/lua/plugins/<file wich contains it the plugin>
 
 ## Plugins
 
-This configuration includes the following plugins:
+This configuration includes the following and more plugins:
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer
