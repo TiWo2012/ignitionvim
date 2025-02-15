@@ -6,7 +6,7 @@ return {
 
   {
     "brianhuster/autosave.nvim",
-    event="InsertEnter",
+    event="VimEnter",
     opts = {} -- Configuration here
   },
 
