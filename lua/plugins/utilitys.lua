@@ -112,6 +112,7 @@ return {
       require("noice").setup(opts)
     end,
   },
+
   {
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
