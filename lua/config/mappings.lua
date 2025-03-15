@@ -34,4 +34,8 @@ map("n", "<leader>ut", ":UndotreeToggle<cr>")
 map("n", "<leader>vs", ":vs<cr>")
 map("n", "<leader>hs", ":sp<cr>")
 
+-- autosave
 map("n", "<leader>as", ":Autosave toggle<cr>")
+
+--terminal command
+map("n", "!", ":!")

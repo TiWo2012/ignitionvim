@@ -22,11 +22,8 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<cr>", { desc="open up a floating terminal" })
-      vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical<cr>", { desc="open up a vertical terminal" })
-      vim.keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<cr>", { desc="open up a horizontal terminal" })
-      vim.keymap.set("n", "<leader>lg", ":ToggleTermSend lazygit<cr>", { desc="open up a lazygit" })
-      vim.keymap.set("n", "<leader>hm", ":ToggleTermSend btm<cr>", { desc="open up a hardware monitor" })
+      vim.api.nvim_set_keymap("n", "<leader>to", ":term<cr>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("t", "<leader>tc", "exit<cr>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, silent = true })
     end
   }
