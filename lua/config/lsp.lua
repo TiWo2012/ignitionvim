@@ -64,7 +64,7 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   preselect = 'item',
   completion = {
