@@ -17,12 +17,14 @@ return {
           -- colors: blue: 12263a, green: 357266, red: c42021, white: f6f4f3, Lion: bb9457
 
           header = {
-              " _  _  __  ",
-              "/ )( \\(  )",
-              ") __ ( )(   )",
-              "\\_)(_/(__)",
-              fg = colors.green,
-              style = "bold"
+            "  _______",
+            " /        \\",
+            "| I G N I  |",
+            " _|  T I O N  |_",
+            "  |  V I M  |",
+            "  |_________|",
+            fg = colors.green,
+            style = "bold"
           },
           center = {
             {
