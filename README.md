@@ -56,8 +56,4 @@ don't forget to install llvm. this config only works on unix based systems.
 - [clangd](https://clangd.llvm.org/) - C/C++ language server
 - [zerolsp](https://github.com/zerolsp/zerolsp) - tools for language servers
 - [codeium](https://github.com/Exafunction/codeium) - ai based code completion like github copilot
-
-## Contributing
-
-I don't have a problem with PR or Isues but don't expect them to be solved fast. I have more recent projects.
-For example [ByteForgeEngine](https://github.com/TiWo2012/ByteForge-Engine).
+note that codium needs a registration but is free.
