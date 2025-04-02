@@ -12,7 +12,7 @@ return {
 
   {
     "numToStr/Comment.nvim",
-    event = "VeryLazy",
+    event = "VimEnter",
     config = function()
       require("Comment").setup()
     end
@@ -37,6 +37,7 @@ return {
           "lazy",
           "mason",
           "neo-tree",
+          "NvimTree",
           "notify",
           "snacks_dashboard",
           "snacks_notif",
