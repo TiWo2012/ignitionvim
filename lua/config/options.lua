@@ -5,7 +5,7 @@ o.colorcolumn='80'
 
 -- line numbers
 o.number=true
--- o.relativenumber=true
+o.relativenumber=true
 
 -- cursor
 o.cursorline=true

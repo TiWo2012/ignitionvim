@@ -1,41 +1,39 @@
-local map = vim.keymap.set
-
 -- better escape
-map("i", "jk", "<esc>")
-map("i", "jj", "<esc>")
+vim.keymap.set("i", "jk", "<esc>")
+vim.keymap.set("i", "jj", "<esc>")
 
 -- better o
--- map("n", "o", "o<esc>")
--- map("n", "O", "O<esc>")
+-- vim.keymap.set("n", "o", "o<esc>")
+-- vim.keymap.set("n", "O", "O<esc>")
 
 -- window nav
-map("n", "<C-h>", "<c-w>h")
-map("n", "<C-j>", "<c-w>j")
-map("n", "<C-k>", "<c-w>k")
-map("n", "<C-l>", "<c-w>l")
+vim.keymap.set("n", "<leader>h", "<c-w>h", { silent = true })
+vim.keymap.set("n", "<leader>j", "<c-w>j", { silent = true })
+vim.keymap.set("n", "<leader>k", "<c-w>k", { silent = true })
+vim.keymap.set("n", "<leader>l", "<c-w>l", { silent = true })
 
 -- window resizing using arrowkeys
-map("n", "<c-up>", ":resize -2<cr>", { silent = true })
-map("n", "<c-down>", ":resize +2<cr>" , { silent = true })
-map("n", "<c-left>", ":vertical resize -2<cr>" , { silent = true })
-map("n", "<c-right>", ":vertical resize +2<cr>" , { silent = true })
+vim.keymap.set("n", "<c-up>", ":resize -2<cr>", { silent = true })
+vim.keymap.set("n", "<c-down>", ":resize +2<cr>", { silent = true })
+vim.keymap.set("n", "<c-left>", ":vertical resize -2<cr>", { silent = true })
+vim.keymap.set("n", "<c-right>", ":vertical resize +2<cr>", { silent = true })
 
 -- new file
-map("n", "<leader>n", ":new<cr>")
+vim.keymap.set("n", "<leader>n", ":new<cr>")
 
-map("n", "<leader>w", ":wa<cr>")
+vim.keymap.set("n", "<leader>w", ":wa<cr>")
 
 -- close panes
-map("n", "<leader>q", ":q<cr>")
+vim.keymap.set("n", "<leader>q", ":q<cr>")
 
 -- undotree
-map("n", "<leader>ut", ":UndotreeToggle<cr>")
+vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<cr>")
 
-map("n", "<leader>vs", ":vs<cr>")
-map("n", "<leader>hs", ":sp<cr>")
+vim.keymap.set("n", "<leader>vs", ":vs<cr>")
+vim.keymap.set("n", "<leader>sp", ":sp<cr>")
 
 -- autosave
-map("n", "<leader>as", ":Autosave toggle<cr>")
+vim.keymap.set("n", "<leader>as", ":Autosave toggle<cr>")
 
 --terminal command
-map("n", "!", ":!")
+vim.keymap.set("n", "!", ":!")

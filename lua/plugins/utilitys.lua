@@ -6,7 +6,7 @@ return {
 
   {
     "brianhuster/autosave.nvim",
-    event="VimEnter",
+    event = "VimEnter",
     opts = {} -- Configuration here
   },
 
@@ -18,46 +18,59 @@ return {
     end
   },
 
+  -- uncomment for different indent lines
+  -- {
+  --   "echasnovski/mini.indentscope",
+  --   version = false, -- wait till new 0.7.0 release to put it back on semver
+  --   opts = {
+  --     -- symbol = "▏",
+  --     symbol = "│",
+  --     options = { try_as_border = true },
+  --   },
+  --   init = function()
+  --     vim.api.nvim_create_autocmd("FileType", {
+  --       pattern = {
+  --         "Trouble",
+  --         "alpha",
+  --         "dashboard",
+  --         "fzf",
+  --         "help",
+  --         "lazy",
+  --         "mason",
+  --         "neo-tree",
+  --         "NvimTree",
+  --         "notify",
+  --         "snacks_dashboard",
+  --         "snacks_notif",
+  --         "snacks_terminal",
+  --         "snacks_win",
+  --         "toggleterm",
+  --         "trouble",
+  --       },
+  --       callback = function()
+  --         vim.b.miniindentscope_disable = true
+  --       end,
+  --     })
+  --
+  --     vim.api.nvim_create_autocmd("User", {
+  --       pattern = "SnacksDashboardOpened",
+  --       callback = function(data)
+  --         vim.b[data.buf].miniindentscope_disable = true
+  --       end,
+  --     })
+  --   end,
+  -- },
+
   {
-    "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
-    opts = {
-      -- symbol = "▏",
-      symbol = "│",
-      options = { try_as_border = true },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = {
-          "Trouble",
-          "alpha",
-          "dashboard",
-          "fzf",
-          "help",
-          "lazy",
-          "mason",
-          "neo-tree",
-          "NvimTree",
-          "notify",
-          "snacks_dashboard",
-          "snacks_notif",
-          "snacks_terminal",
-          "snacks_win",
-          "toggleterm",
-          "trouble",
-        },
-        callback = function()
-          vim.b.miniindentscope_disable = true
-        end,
+    "nvimdev/indentmini.nvim",
+    event = "VimEnter",
+    config = function()
+      require("indentmini").setup({
+        exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "NvimTree" },
       })
 
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "SnacksDashboardOpened",
-        callback = function(data)
-          vim.b[data.buf].miniindentscope_disable = true
-        end,
-      })
-    end,
+      vim.cmd.highlight('IndentLine guifg=#808080')
+    end
   },
 
   -- coppyed from lazyvims config
@@ -93,15 +106,15 @@ return {
     },
     -- stylua: ignore
     keys = {
-      { "<leader>sn", "", desc = "+noice"},
-      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-      { "<leader>snt", function() require("noice").cmd("pick") end, desc = "Noice Picker (Telescope/FzfLua)" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
+      { "<leader>sn",  "",                                                                            desc = "+noice" },
+      { "<S-Enter>",   function() require("noice").redirect(vim.fn.getcmdline()) end,                 mode = "c",                              desc = "Redirect Cmdline" },
+      { "<leader>snl", function() require("noice").cmd("last") end,                                   desc = "Noice Last Message" },
+      { "<leader>snh", function() require("noice").cmd("history") end,                                desc = "Noice History" },
+      { "<leader>sna", function() require("noice").cmd("all") end,                                    desc = "Noice All" },
+      { "<leader>snd", function() require("noice").cmd("dismiss") end,                                desc = "Dismiss All" },
+      { "<leader>snt", function() require("noice").cmd("pick") end,                                   desc = "Noice Picker (Telescope/FzfLua)" },
+      { "<c-f>",       function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,  silent = true,                           expr = true,              desc = "Scroll Forward",  mode = { "i", "n", "s" } },
+      { "<c-b>",       function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true,                           expr = true,              desc = "Scroll Backward", mode = { "i", "n", "s" } },
     },
     config = function(_, opts)
       -- HACK: noice shows messages from before it was enabled,
@@ -120,12 +133,12 @@ return {
     opts = {},
     -- stylua: ignore
     keys = {
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
-      { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+      { "]t",         function() require("todo-comments").jump_next() end,              desc = "Next Todo Comment" },
+      { "[t",         function() require("todo-comments").jump_prev() end,              desc = "Previous Todo Comment" },
+      { "<leader>xt", "<cmd>Trouble todo toggle<cr>",                                   desc = "Todo (Trouble)" },
       { "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
-      { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
-      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+      { "<leader>st", "<cmd>TodoTelescope<cr>",                                         desc = "Todo" },
+      { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",                 desc = "Todo/Fix/Fixme" },
     },
   },
 
@@ -138,10 +151,10 @@ return {
   },
 
   {
-      "SmiteshP/nvim-navic",
-      requires = "neovim/nvim-lspconfig",
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
 
-    config = function ()
+    config = function()
       local navic = require("nvim-navic")
 
       require("lspconfig").clangd.setup {
@@ -149,6 +162,6 @@ return {
           navic.attach(client, bufnr)
         end
       }
-  end
+    end
   },
 }
