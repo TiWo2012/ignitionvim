@@ -36,4 +36,7 @@ o.clipboard='unnamedplus'
 -- warp
 o.wrap=false
 
+o.background='dark'
+
+-- vim.cmd('colorscheme catppuccin-mocha')
 vim.cmd('colorscheme tokyonight-moon')

@@ -1,12 +1,12 @@
 return {
   {
     "catppuccin/nvim",
-    opts = {
-      ransparent_background = true,
-    }
   },
 
   {
-    "folke/tokyonight.nvim"
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
 }

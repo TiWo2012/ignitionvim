@@ -34,6 +34,8 @@ The main configuration file is located at `~/.config/nvim/lua`. You can edit thi
 
 the default options you can have a look at the file `.config/nvim/lua/options.lua`
 
+to show the '~' on the emptylines change the value of ~/.local/share/nvim/lazy/tokyonight/lua/tokyonight/groups/base.lua the line with EndOfBuffer.
+
 ## Mappings
 
 I have included [which-key](https://github.com/folke/which-key.nvim) for key mappings. 
