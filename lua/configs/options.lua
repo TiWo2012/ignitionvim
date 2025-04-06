@@ -35,3 +35,5 @@ o.clipboard='unnamedplus'
 
 -- warp
 o.wrap=false
+
+vim.cmd('colorscheme tokyonight-moon')

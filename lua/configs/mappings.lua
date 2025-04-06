@@ -1,6 +1,8 @@
 -- better escape
 vim.keymap.set("i", "jk", "<esc>")
 vim.keymap.set("i", "jj", "<esc>")
+vim.keymap.set("t", "jk", "<esc>")
+vim.keymap.set("t", "jj", "<esc>")
 
 -- better o
 -- vim.keymap.set("n", "o", "o<esc>")
@@ -31,9 +33,6 @@ vim.keymap.set("n", "<leader>ut", ":UndotreeToggle<cr>")
 
 vim.keymap.set("n", "<leader>vs", ":vs<cr>")
 vim.keymap.set("n", "<leader>sp", ":sp<cr>")
-
--- autosave
-vim.keymap.set("n", "<leader>as", ":Autosave toggle<cr>")
 
 --terminal command
 vim.keymap.set("n", "!", ":!")
