@@ -40,6 +40,11 @@ m("n", "<leader>sp", ":sp<cr>")
 m("n", "!", ":!")
 
 -- clear search
-m("n", "<esc>", ":noh<cr>")
+m("n", "<esc>", ":noh<cr>", { silent = true })
+
+-- terminals
+m("n", "<leader>to", ":terminal<cr>", { noremap = true, silent = true })
+m("t", "<leader>tc", "exit<cr>", { noremap = true, silent = true })
+m("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
 vim.g.mapleader = " "

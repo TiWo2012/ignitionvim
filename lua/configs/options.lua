@@ -1,4 +1,5 @@
 local o = vim.opt
+local c = vim.cmd
 
 -- colors
 o.colorcolumn='80'
@@ -37,6 +38,7 @@ o.clipboard='unnamedplus'
 o.wrap=false
 
 o.background='dark'
+c[[set mouse=]]
 
--- vim.cmd('colorscheme catppuccin-mocha')
-vim.cmd('colorscheme tokyonight-moon')
+-- c('colorscheme catppuccin-mocha')
+c('colorscheme tokyonight-moon')

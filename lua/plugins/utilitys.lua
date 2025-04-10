@@ -129,6 +129,7 @@ return {
 
   {
     "folke/todo-comments.nvim",
+    event = "VimEnter",
     cmd = { "TodoTrouble", "TodoTelescope" },
     opts = {},
     -- stylua: ignore
@@ -144,6 +145,7 @@ return {
 
   {
     "max397574/colortils.nvim",
+    event = "VimEnter",
     cmd = "Colortils",
     config = function()
       require("colortils").setup()

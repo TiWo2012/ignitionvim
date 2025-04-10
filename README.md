@@ -6,11 +6,8 @@ easy to set up and use. close to vanilla nvim experience. inspired by Astrovim a
 every thing in the repo are just my personal configs but you can send me PR and Isuess if someting doesn't work for you.
 I have no problem with it.
 
-'someone pls fix the splashscreen.'
-
 ## Features
 
-- **Minimal Setup**: This configuration focuses on providing only the core features and plugins needed for a productive Neovim experience for c/c++.
 - **Streamlined Navigation**: Includes key mappings and plugins for efficient file navigation and buffer management.
 - **Sensible Defaults**: Applies a set of sensible default settings to enhance the Neovim experience.
 - **Customizable**: You can easily modify the configuration to suit your preferences and needs.
@@ -30,24 +27,24 @@ I have no problem with it.
 
 This configuration is designed to be minimal and easy to customize. You can modify the settings and add/remove plugins as needed to suit your preferences.
 
-The main configuration file is located at `~/.config/nvim/lua`. You can edit this file to make changes to the configuration.
+The main configuration files are located at `~/.config/nvim/lua`. You can edit those files to make changes to the configuration.
 
-the default options you can have a look at the file `.config/nvim/lua/options.lua`
+For the default options you can have a look at the file `.config/nvim/lua/options.lua`
 
 to show the '~' on the emptylines change the value of ~/.local/share/nvim/lazy/tokyonight/lua/tokyonight/groups/base.lua the line with EndOfBuffer.
 
 ## Mappings
 
 I have included [which-key](https://github.com/folke/which-key.nvim) for key mappings. 
-general mappings can be found under `.config/nvim/lua/keymaps.lua` and the one for plugins
-can be found in the `.config/nvim/lua/plugins/<file wich contains it the plugin>.lua`
+general mappings can be found under `.config/nvim/lua/keymaps.lua` and the ones for plugins
+can be found in the `.config/nvim/lua/plugins/<file wich contains the plugin>.lua`
 
 ## Plugins
 
 This configuration includes the following and more plugins:
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Plugin manager
-- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - File explorer
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)/[NVimTree](https://github.com/nvim-tree/nvim-tree.lua) - File explorer
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Fuzzy file finder
 
 ## Code autocompletion
