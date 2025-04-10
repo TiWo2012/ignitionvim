@@ -55,6 +55,7 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
+    { name = 'path' },
     { name = 'nvim_lsp' },
   },
   snippet = {
