@@ -47,4 +47,6 @@ m("n", "<leader>to", ":terminal<cr>", { noremap = true, silent = true })
 m("t", "<leader>tc", "exit<cr>", { noremap = true, silent = true })
 m("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
+m("n", "<leader>so", vim.cmd.so )
+
 vim.g.mapleader = " "

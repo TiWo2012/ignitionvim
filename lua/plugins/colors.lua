@@ -9,4 +9,8 @@ return {
     priority = 1000,
     opts = {},
   },
+
+  {
+    "rose-pine/neovim"
+  }
 }

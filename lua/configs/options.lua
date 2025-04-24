@@ -38,7 +38,12 @@ o.clipboard='unnamedplus'
 o.wrap=false
 
 o.background='dark'
+
+o.updatetime=50
 c[[set mouse=]]
 
--- c('colorscheme catppuccin-mocha')
-c('colorscheme tokyonight-moon')
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+c[[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

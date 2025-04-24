@@ -7,3 +7,5 @@ require("configs.mappings")
 require("configs.options")
 -- lsp specific stuff
 require("configs.lsp")
+-- colors
+require("configs.colors")
