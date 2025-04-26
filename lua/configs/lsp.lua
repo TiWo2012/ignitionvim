@@ -39,16 +39,38 @@ require("mason-lspconfig").setup({
     "lua_ls",
     "rust_analyzer",
     "clangd",
-  }
+  },
+  automatic_installation = true
 })
 
 require("mason-lspconfig").setup_handlers({
   function(server_name)
-    require("lspconfig")[server_name].setup({})
+    if server_name == "lua_ls" then
+      require("lspconfig")["lua_ls"].setup({
+        settings = {
+          Lua = {
+            runtime = {
+              version = "LuaJIT",
+            },
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+              enable = false,
+            },
+          },
+        },
+      })
+    else
+      require("lspconfig")[server_name].setup({})
+    end
   end,
 })
-local cmp = require('cmp')
 
+local cmp = require('cmp')
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -61,6 +83,8 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'luasnip' },
+    { name = 'nvim_lua' },
+    { name = 'cmdline' }
   },
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),

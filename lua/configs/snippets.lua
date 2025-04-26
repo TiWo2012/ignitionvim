@@ -3,7 +3,7 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
-require("luasnip").add_snippets('cpp', {
+ls.add_snippets('cpp', {
   s('main', {
     t('int main(int argc, char **argv) {'),
     i(0),
@@ -34,5 +34,16 @@ require("luasnip").add_snippets('cpp', {
     t(' {'),
     i(1),
     t('};')
+  }),
+  s('todo', {
+    t('// TODO: '),
+    i(0, "todo")
+  })
+})
+
+ls.add_snippets("text", {
+  s('todo', {
+    t('[ ] '),
+    i(0, "todo"),
   })
 })

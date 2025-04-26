@@ -11,10 +11,10 @@ m("t", "jj", "<esc>")
 -- m("n", "O", "O<esc>")
 
 -- window nav
-m("n", "<leader>h", "<c-w>h", { silent = true })
-m("n", "<leader>j", "<c-w>j", { silent = true })
-m("n", "<leader>k", "<c-w>k", { silent = true })
-m("n", "<leader>l", "<c-w>l", { silent = true })
+m("n", "<c-h>", "<c-w>h", { silent = true })
+m("n", "<c-j>", "<c-w>j", { silent = true })
+m("n", "<c-k>", "<c-w>k", { silent = true })
+m("n", "<c-l>", "<c-w>l", { silent = true })
 
 -- window resizing using arrowkeys
 m("n", "<c-up>", ":resize -2<cr>", { silent = true })
@@ -22,13 +22,13 @@ m("n", "<c-down>", ":resize +2<cr>", { silent = true })
 m("n", "<c-left>", ":vertical resize -2<cr>", { silent = true })
 m("n", "<c-right>", ":vertical resize +2<cr>", { silent = true })
 
--- new file
-m("n", "<leader>n", ":new<cr>")
-
 m("n", "<leader>w", ":wa<cr>")
+m("n", "<leader>W", ":w!<cr>")
 
 -- close panes
+m("n", "<leader>c", ":close<cr>")
 m("n", "<leader>q", ":q<cr>")
+m("n", "<leader>Q", ":q!<cr>")
 
 -- undotree
 m("n", "<leader>ut", ":UndotreeToggle<cr>")
@@ -49,7 +49,9 @@ m("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
 m("n", "<leader>so", vim.cmd.so)
 
-m("n", "<leader>oo", vim.cmd.Oil)
+m("n", "<leader>e", vim.cmd.Oil)
+
+m("n", "<leader>no", vim.cmd.Note)
 
 local ls = require("luasnip")
 vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
