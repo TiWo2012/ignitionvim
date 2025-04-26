@@ -9,3 +9,4 @@ require("configs.options")
 require("configs.lsp")
 -- colors
 require("configs.colors")
+require('configs.snippets')
