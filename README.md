@@ -6,6 +6,12 @@ easy to set up and use. close to vanilla nvim experience. inspired by Astrovim a
 every thing in the repo are just my personal configs but you can send me PR and Isuess if someting doesn't work for you.
 I have no problem with it.
 
+## inportant
+
+1. the mouse is disabled so you can only use the keyboard.
+1. you must have a `.todo.txt` file in your home directory.
+1. this config is not for windows. it will only work on unix based systems(macos and linux)
+
 ## Features
 
 - **Streamlined Navigation**: Includes key mappings and plugins for efficient file navigation and buffer management.
