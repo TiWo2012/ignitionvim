@@ -1,7 +1,3 @@
--- NOTE: to make any of this work you need a language server.
--- If you don't know what that is, watch this 5 min video:
--- https://www.youtube.com/watch?v=LaS32vctfOY
-
 -- Reserve a space in the gutter
 vim.opt.signcolumn = 'yes'
 
@@ -54,17 +50,17 @@ require("mason-lspconfig").setup_handlers({
 local cmp = require('cmp')
 
 cmp.setup({
-  sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'buffer'  },
-    { name = 'luasnip' },
-  },
   snippet = {
     expand = function(args)
       -- You need Neovim v0.10 to use vim.snippet
-      vim.snippet.expand(args.body)
+      require('luasnip').lsp_expand(args.body)
     end,
+  },
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'luasnip' },
   },
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
