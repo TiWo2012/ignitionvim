@@ -49,7 +49,7 @@ m("t", "<C-x>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
 m("n", "<leader>so", vim.cmd.so)
 
-m("n", "<leader>e", vim.cmd.Oil)
+m("n", "-", vim.cmd.Oil)
 
 m("n", "<leader>no", vim.cmd.Note)
 

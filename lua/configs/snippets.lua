@@ -38,10 +38,40 @@ ls.add_snippets('cpp', {
   s('todo', {
     t('// TODO: '),
     i(0, "todo")
-  })
+  }),
+  s('inc', {
+    t('#include <'),
+    i(0),
+    t('>')
+  }),
+  s('includ', {
+    t('#include "'),
+    i(0),
+    t('"')
+  }),
+  s('info', {
+    t('printf("[INFO] '),
+    i(0),
+    t('");')
+  }),
+  s('warning', {
+    t('printf("[WARN] '),
+    i(0),
+    t('");')
+  }),
+  s('error', {
+    t('fprintf(stderr, "[ERR] '),
+    i(0),
+    t('");')
+  }),
+  s('debug', {
+    t('printf("[DEB] '),
+    i(0),
+    t('");')
+  }),
 })
 
-ls.add_snippets("text", {
+ls.add_snippets("markdown", {
   s('todo', {
     t('[ ] '),
     i(0, "todo"),

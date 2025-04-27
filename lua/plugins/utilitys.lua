@@ -166,4 +166,12 @@ return {
       }
     end
   },
+
+  {
+    "TiWo2012/floatingTodo.nvim",
+    event = "VimEnter",
+    config = function()
+      require("floatingTodo").setup()
+    end
+  }
 }

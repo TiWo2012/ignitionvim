@@ -1,6 +1,10 @@
 local o = vim.opt
 local c = vim.cmd
 
+o.conceallevel = 2
+
+o.guicursor = 'i:block'
+
 -- colors
 o.colorcolumn = '80'
 
@@ -21,7 +25,7 @@ o.scrolloff = 8
 -- undo speciffic stuff
 o.swapfile = false
 o.undodir = '/home/timow/.vim/backup'
-o.undofile = true
+o.undofile = false
 o.undoreload = 10000
 
 -- tabs
@@ -50,3 +54,5 @@ vim.diagnostic.config({
 vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#F9936A" })
 vim.api.nvim_set_hl(0, "LineNR", { fg = "#F9936A" })
 vim.api.nvim_set_hl(0, "line", { fg = "#F9936A" })
+
+c[[:syntax match Entity "\[ \]" conceal cchar=t]]
