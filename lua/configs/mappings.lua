@@ -11,10 +11,10 @@ m("t", "jj", "<esc>")
 -- m("n", "O", "O<esc>")
 
 -- window nav
-m("n", "<c-h>", "<c-w>h", { silent = true })
-m("n", "<c-j>", "<c-w>j", { silent = true })
-m("n", "<c-k>", "<c-w>k", { silent = true })
-m("n", "<c-l>", "<c-w>l", { silent = true })
+m("n", "<c-h>", vim.cmd.TmuxNavigateLeft, { silent = true })
+m("n", "<c-j>", vim.cmd.TmuxNavigateDown , { silent = true })
+m("n", "<c-k>", vim.cmd.TmuxNavigateUp, { silent = true })
+m("n", "<c-l>", vim.cmd.TmuxNavigateRight, { silent = true })
 
 -- window resizing using arrowkeys
 m("n", "<c-up>", ":resize -2<cr>", { silent = true })
