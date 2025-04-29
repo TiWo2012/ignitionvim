@@ -1,15 +1,13 @@
 local o = vim.opt
 local c = vim.cmd
 
-o.conceallevel = 2
-
 o.guicursor = 'i:block'
 
 -- colors
 o.colorcolumn = '80'
 
 -- line numbers
-o.number = true
+o.number = false
 o.relativenumber = true
 
 -- cursor
@@ -44,7 +42,6 @@ o.wrap = false
 o.background = 'dark'
 
 o.updatetime = 50
-c [[set mouse=]]
 
 vim.diagnostic.config({
   virtual_text = true
@@ -54,5 +51,3 @@ vim.diagnostic.config({
 vim.api.nvim_set_hl(0, "EndOfBuffer", { fg = "#F9936A" })
 vim.api.nvim_set_hl(0, "LineNR", { fg = "#F9936A" })
 vim.api.nvim_set_hl(0, "line", { fg = "#F9936A" })
-
-c[[:syntax match Entity "\[ \]" conceal cchar=t]]

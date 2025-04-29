@@ -9,7 +9,7 @@ I have no problem with it.
 ## inportant
 
 1. the mouse is disabled so you can only use the keyboard.
-1. you must have a `.todo.txt` file in your home directory.
+1. you must have a `.todo.md` file in your home directory.
 1. this config is not for windows. it will only work on unix based systems(macos and linux)
 
 ## Features
@@ -37,8 +37,6 @@ The main configuration files are located at `~/.config/nvim/lua`. You can edit t
 
 For the default options you can have a look at the file `.config/nvim/lua/options.lua`
 
-to show the '~' on the emptylines change the value of ~/.local/share/nvim/lazy/tokyonight/lua/tokyonight/groups/base.lua the line with EndOfBuffer.
-
 ## Mappings
 
 I have included [which-key](https://github.com/folke/which-key.nvim) for key mappings. 
@@ -60,5 +58,7 @@ don't forget to install llvm. this config only works on unix based systems.
 
 - [clangd](https://clangd.llvm.org/) - C/C++ language server
 - [zerolsp](https://github.com/zerolsp/zerolsp) - tools for language servers
-- [codeium](https://github.com/Exafunction/codeium) - ai based code completion like github copilot
+- [windsurf](https://github.com/Exafunction/codeium) - ai based code completion like github copilot
 note that codium needs a registration but is free.
+
+[ ] jk  
