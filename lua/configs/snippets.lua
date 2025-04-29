@@ -73,7 +73,10 @@ ls.add_snippets('cpp', {
 
 ls.add_snippets("markdown", {
   s('todo', {
-    t('[ ] '),
-    i(0, "todo"),
+    t(' '),
+    i(0, "todo")
+  }),
+  s('todoDone', {
+    t('')
   })
 })

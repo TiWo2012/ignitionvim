@@ -60,5 +60,3 @@ don't forget to install llvm. this config only works on unix based systems.
 - [zerolsp](https://github.com/zerolsp/zerolsp) - tools for language servers
 - [windsurf](https://github.com/Exafunction/codeium) - ai based code completion like github copilot
 note that codium needs a registration but is free.
-
-[ ] jk  
