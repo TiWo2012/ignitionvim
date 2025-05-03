@@ -43,6 +43,8 @@ after that you can open neovim and run `:Lazy sync`
 
 ## customization
 
+**if you change the config please remove the `.git` direcotory from the `.config/nvim` directory**
+
 - to add adition plugins you can add a lua file to the `lua/plugins` directory.
 
 ```lua
