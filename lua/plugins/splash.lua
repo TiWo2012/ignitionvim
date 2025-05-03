@@ -14,17 +14,13 @@ return {
       require('dashboard').setup {
         theme = 'doom',
         config = {
-          -- colors: blue: 12263a, green: 357266, red: c42021, white: f6f4f3, Lion: bb9457
-
           header = {
-            "  _______",
-            " /        \\",
-            "| I G N I  |",
-            " _|  T I O N  |_",
-            "  |  V I M  |",
-            "  |_________|",
-            fg = colors.green,
-            style = "bold"
+            [[ _______]],
+            [[/        \]],
+            [[| I G N I  |]],
+            [[_|  T I O N  |_]],
+            [[ |  V I M  |]],
+            [[ \________/ ]],
           },
           center = {
             {
@@ -49,17 +45,23 @@ return {
               desc = '  toggle terminal',
               key = 'tf',
               fg = colors.blue,
-              action = function() vim.cmd('ToggleTerm direction=float') end
+              action = function() vim.cmd('terminal') end
             },
+            {
+              desc = '  toggle lazygit',
+              key = 'tg',
+              fg = colors.blue,
+              action = function() vim.cmd('terminal lazygit') end
+            }
           },
           footer = {
-              "😊 GREAT day for coding",
-              fg = colors.green,
-              style = "italic"
+            "😊 GREAT day for coding",
+            fg = colors.green,
+            style = "italic"
           }
-        }
+        },
       }
     end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'} }
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   }
 }

@@ -35,20 +35,22 @@ return {
       options = {
         theme = theme,  -- Setze das runde Design
         section_separators = { left = '', right = '' },  -- Runde Ecken (Anpassung der Trennzeichen)
-        component_separators = { left = ' ', right = ' ' },  -- Runde Ecken (Anpassung der Trennzeichen)
+        component_separators = { left = '', right = '' },  -- Runde Ecken (Anpassung der Trennzeichen)
         icons_enabled = true,
       },
       sections = {
-        -- Linke Sektion der Statusline
+        -- left section
         lualine_a = {'mode'},  -- Anzeige des Modus (Normal, Insert, etc.)
         lualine_b = {'branch', 'diff', 'diagnostics'},  -- Zeigt Git-Branch und Diff an
         lualine_c = {'filename', 'filetype'},  -- Dateiname und Dateityp
+
+        -- right section
         lualine_x = {'encoding', 'fileformat', 'filesize'},  -- Datei-Details
-        -- Rechte Sektion der Statusline
         lualine_y = {'progress'},  -- Zeigt den Fortschritt des Cursors an
         lualine_z = {'location'},  -- Zeigt die aktuelle Zeile und Spalte an
       },
-      extensions = {'fugitive', 'nvim-tree'},  -- Optional: Erweiterungen für Git und den Dateiexplorer
+
+      extensions = {'fugitive', 'nvim-tree', 'oil'},  -- Optional: Erweiterungen für Git und den Dateiexplorer
     })
   end
 }

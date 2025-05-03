@@ -23,20 +23,21 @@ return {
   --      }
   --    end
   -- },
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   version = "*",
-  --   lazy = false,
-  --   dependencies = {
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   config = function()
-  --     require("nvim-tree").setup {}
-  --
-  --     vim.keymap.set("n", "<leader>o", ":NvimTreeFocus<cr>")
-  --     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
-  --   end,
-  -- },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {}
+
+      vim.keymap.set("n", "<C-n>", ":NvimTreeFocus<cr>")
+      vim.keymap.set("n", "<C-t>", ":NvimTreeToggle<cr>")
+    end,
+  },
+
   {
     "nvim-telescope/telescope.nvim",
 
@@ -44,7 +45,7 @@ return {
 
     config = function()
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+      vim.keymap.set('n', '<leader><space>', builtin.find_files, { desc = 'Telescope find files' })
       vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope live grep' })
       vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
@@ -58,53 +59,32 @@ return {
       vim.keymap.set("n", "<leader>ut", vim.cmd.UndotreeToggle)
     end
   },
-  -- {
-  --   "mikavilpas/yazi.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     -- check the installation instructions at
-  --     -- https://github.com/folke/snacks.nvim
-  --     "folke/snacks.nvim"
-  --   },
-  --   keys = {
-  --     -- 👇 in this section, choose your own keymappings!
-  --     {
-  --       "<leader>oy",
-  --       mode = { "n", "v" },
-  --       "<cmd>Yazi<cr>",
-  --       desc = "Open yazi at the current file",
-  --     },
-  --     {
-  --       -- Open in the current working directory
-  --       "<leader>cw",
-  --       "<cmd>Yazi cwd<cr>",
-  --       desc = "Open the file manager in nvim's working directory",
-  --     },
-  --   },
-  --   ---@type YaziConfig | {}
-  --   opts = {
-  --     -- if you want to open yazi instead of netrw, see below for more info
-  --     open_for_directories = false,
-  --     keymaps = {
-  --       show_help = "<f1>",
-  --     },
-  --   },
-  --   -- 👇 if you use `open_for_directories=true`, this is recommended
-  --   init = function()
-  --     -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
-  --     -- vim.g.loaded_netrw = 1
-  --     vim.g.loaded_netrwPlugin = 1
-  --   end,
-  -- },
+
+  {
+    -- I recommend not installing this a dependency of oil as it isn't required
+    -- until you open an oil buffer
+    "FerretDetective/oil-git-signs.nvim",
+    ft = "oil",
+    ---@module "oil_git_signs"
+    ---@type oil_git_signs.Config
+    opts = {},
+
+  },
   {
     'stevearc/oil.nvim',
+    opts = {
+      win_options = {
+        signcolumn = "yes:2",
+        statuscolumn = false
+      }
+    },
     config = function()
       require("oil").setup({
         default_file_explorer = true,
-
         columns = {
           "icon",
           "size",
+          "git"
         },
         -- Buffer-local options to use for oil buffers
         buf_options = {
@@ -122,22 +102,16 @@ return {
           conceallevel = 3,
           concealcursor = "nvic",
         },
-        -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
         delete_to_trash = true,
-        -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
         skip_confirm_for_simple_edits = true,
         -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
         -- (:help prompt_save_on_select_new_entry)
-        prompt_save_on_select_new_entry = true,
-        -- Oil will automatically delete hidden buffers after this delay
-        -- You can set the delay to false to disable cleanup entirely
-        -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
+        prompt_save_on_select_new_entry = false,
         cleanup_delay_ms = 2000,
-
         lsp_file_methods = {
           enabled = true,
           timeout_ms = 1000,
-          autosave_changes = false,
+          autosave_changes = true,
         },
         constrain_cursor = "editable",
         watch_for_changes = true,
@@ -148,7 +122,7 @@ return {
           ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
           ["<C-t>"] = { "actions.select", opts = { tab = true } },
           ["<C-p>"] = "actions.preview",
-          ["<C-c>"] = { "actions.close", mode = "n" },
+          ["<leader>q"] = { "actions.close", mode = "n" },
           ["<C-l>"] = "actions.refresh",
           ["-"] = { "actions.parent", mode = "n" },
           ["_"] = { "actions.open_cwd", mode = "n" },
@@ -157,7 +131,7 @@ return {
           ["gs"] = { "actions.change_sort", mode = "n" },
           ["gx"] = "actions.open_external",
           ["g."] = { "actions.toggle_hidden", mode = "n" },
-          ["g\\"] = { "actions.toggle_trash", mode = "n" },
+          ["<leader>ot"] = { "actions.toggle_trash", mode = "n" },
         },
         use_default_keymaps = true,
         view_options = {
@@ -187,9 +161,7 @@ return {
             return nil
           end,
         },
-        -- Extra arguments to pass to SCP when moving/copying files over SSH
         extra_scp_args = {},
-        -- EXPERIMENTAL support for performing file operations with git
         git = {
           -- Return true to automatically git add/mv/rm files
           add = function(path)
@@ -284,12 +256,12 @@ return {
       })
     end,
 
-    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
   },
   {
     "TiWo2012/scratchpad-nvim",
-    branch = "dev",
+    branch = "main",
 
     config = function()
       require("scratchpad").setup({
