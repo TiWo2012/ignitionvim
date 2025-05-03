@@ -1,38 +1,38 @@
 return {
-  {
-    "echasnovski/mini.diff",
-    config = function()
-      require("mini.diff").setup({
-        view = {
-          signs = {
-            add = '+',
-            change = '~',
-            delete = '-',
-          }
-        }
-      })
-    end
-  },
-
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
-    },
-    config = true,
-    opts = {
-      vim.keymap.set("n", "<leader>ng", ":Neogit<cr>", { desc = "open neogit" })
-    }
-  },
+  -- {
+  --   "echasnovski/mini.diff",
+  --   config = function()
+  --     require("mini.diff").setup({
+  --       view = {
+  --         signs = {
+  --           add = '+',
+  --           change = '~',
+  --           delete = '-',
+  --         }
+  --       }
+  --     })
+  --   end
+  -- },
+  --
+  -- {
+  --   "NeogitOrg/neogit",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",         -- required
+  --     "sindrets/diffview.nvim",        -- optional - Diff integration
+  --     "nvim-telescope/telescope.nvim", -- optional
+  --   },
+  --   config = true,
+  --   opts = {
+  --     vim.keymap.set("n", "<leader>ng", ":Neogit<cr>", { desc = "open neogit" })
+  --   }
+  -- },
 
   {
     "tpope/vim-fugitive",
     config = function()
       vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
-      local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("Fugitive", {})
+      local Fugitive = vim.api.nvim_create_augroup("Fugitive", {})
 
       local autocmd = vim.api.nvim_create_autocmd
       autocmd("BufWinEnter", {
