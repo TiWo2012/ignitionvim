@@ -1,0 +1,6 @@
+require("configs.lazy")
+require("configs.mappings")
+require("configs.lsp")
+require("configs.colors")
+require('configs.snippets')
+require("configs.options")
