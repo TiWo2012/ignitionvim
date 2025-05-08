@@ -3,6 +3,27 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
+ls.add_snippets('lua', {
+  s('print', {
+    t('print('),
+    i(0),
+    t(')')
+  }),
+
+  s('todo', {
+    t('-- TODO: '),
+    i(0, "todo")
+  }),
+
+  s('func', {
+    t('function '),
+    i(0, 'name'),
+    t('('),
+    i(1, 'args'),
+    t(') end')
+  })
+})
+
 ls.add_snippets('cpp', {
   s('main', {
     t('int main(int argc, char **argv) {'),
@@ -44,7 +65,7 @@ ls.add_snippets('cpp', {
     i(0),
     t('>')
   }),
-  s('includ', {
+  s('incl', {
     t('#include "'),
     i(0),
     t('"')
