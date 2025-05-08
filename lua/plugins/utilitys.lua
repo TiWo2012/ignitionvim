@@ -1,21 +1,29 @@
 return {
-  -- autopairs
+  -- mini.nvim probably the bigest collections of plugins
   {
-    "cohama/lexima.vim"
+    "echasnovski/mini.nvim",
+    event = "VimEnter",
+    config = function()
+      require("mini.ai").setup()
+      require("mini.comment").setup()
+      require("mini.align").setup()
+      require("mini.pairs").setup()
+      require("mini.tabline").setup()
+      require("mini.move").setup()
+      require("mini.animate").setup()
+      require("mini.cursorword").setup()
+      require("mini.surround").setup()
+    end,
+
+    mappings = {
+
+    }
   },
 
   {
     "brianhuster/autosave.nvim",
     event = "VimEnter",
     opts = {} -- Configuration here
-  },
-
-  {
-    "numToStr/Comment.nvim",
-    event = "VimEnter",
-    config = function()
-      require("Comment").setup()
-    end
   },
 
   {
