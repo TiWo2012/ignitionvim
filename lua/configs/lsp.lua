@@ -42,8 +42,6 @@ require("mason-lspconfig").setup({
 	},
 	automatic_installation = true,
 	automatic_enable = true,
-	e
-
 })
 
 local cmp = require('cmp')
